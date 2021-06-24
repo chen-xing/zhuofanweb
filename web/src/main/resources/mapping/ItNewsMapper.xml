@@ -1,0 +1,154 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="top.chenzhuofan.web.dal.mapper.ItNewsMapper">
+    <resultMap id="BaseResultMap" type="top.chenzhuofan.web.dal.entity.ItNews">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="newsUuid" property="newsuuid" jdbcType="VARCHAR"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="url" property="url" jdbcType="VARCHAR"/>
+        <result column="read_times" property="readTimes" jdbcType="INTEGER"/>
+        <result column="news_type" property="newsType" jdbcType="INTEGER"/>
+        <result column="news_biz_id" property="newsBizId" jdbcType="VARCHAR"/>
+        <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP"/>
+        <result column="gmt_modify" property="gmtModify" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, newsUuid, title, url, read_times, news_type, news_biz_id, gmt_create, gmt_modify
+  </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from it_news
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    delete from it_news
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+    <insert id="insert" parameterType="top.chenzhuofan.web.dal.entity.ItNews">
+    insert into it_news (id, newsUuid, title, 
+      url, read_times, news_type, 
+      news_biz_id, gmt_create, gmt_modify
+      )
+    values (#{id,jdbcType=BIGINT}, #{newsuuid,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{url,jdbcType=VARCHAR}, #{readTimes,jdbcType=INTEGER}, #{newsType,jdbcType=INTEGER}, 
+      #{newsBizId,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP}, #{gmtModify,jdbcType=TIMESTAMP}
+      )
+  </insert>
+    <insert id="insertSelective" parameterType="top.chenzhuofan.web.dal.entity.ItNews">
+        insert into it_news
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="newsuuid != null">
+                newsUuid,
+            </if>
+            <if test="title != null">
+                title,
+            </if>
+            <if test="url != null">
+                url,
+            </if>
+            <if test="readTimes != null">
+                read_times,
+            </if>
+            <if test="newsType != null">
+                news_type,
+            </if>
+            <if test="newsBizId != null">
+                news_biz_id,
+            </if>
+            <if test="gmtCreate != null">
+                gmt_create,
+            </if>
+            <if test="gmtModify != null">
+                gmt_modify,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="newsuuid != null">
+                #{newsuuid,jdbcType=VARCHAR},
+            </if>
+            <if test="title != null">
+                #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="url != null">
+                #{url,jdbcType=VARCHAR},
+            </if>
+            <if test="readTimes != null">
+                #{readTimes,jdbcType=INTEGER},
+            </if>
+            <if test="newsType != null">
+                #{newsType,jdbcType=INTEGER},
+            </if>
+            <if test="newsBizId != null">
+                #{newsBizId,jdbcType=VARCHAR},
+            </if>
+            <if test="gmtCreate != null">
+                #{gmtCreate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="gmtModify != null">
+                #{gmtModify,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="top.chenzhuofan.web.dal.entity.ItNews">
+        update it_news
+        <set>
+            <if test="newsuuid != null">
+                newsUuid = #{newsuuid,jdbcType=VARCHAR},
+            </if>
+            <if test="title != null">
+                title = #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="url != null">
+                url = #{url,jdbcType=VARCHAR},
+            </if>
+            <if test="readTimes != null">
+                read_times = #{readTimes,jdbcType=INTEGER},
+            </if>
+            <if test="newsType != null">
+                news_type = #{newsType,jdbcType=INTEGER},
+            </if>
+            <if test="newsBizId != null">
+                news_biz_id = #{newsBizId,jdbcType=VARCHAR},
+            </if>
+            <if test="gmtCreate != null">
+                gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="gmtModify != null">
+                gmt_modify = #{gmtModify,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="top.chenzhuofan.web.dal.entity.ItNews">
+    update it_news
+    set newsUuid = #{newsuuid,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      read_times = #{readTimes,jdbcType=INTEGER},
+      news_type = #{newsType,jdbcType=INTEGER},
+      news_biz_id = #{newsBizId,jdbcType=VARCHAR},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modify = #{gmtModify,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+    <select id="getAllItNews" resultMap="BaseResultMap">
+        select
+        <include refid="Base_Column_List"/>
+        from it_news
+        order by id desc,read_times desc
+    </select>
+
+    <select id="getNewsCount" resultType="java.lang.Integer">
+    select
+    count(*)
+    from it_news
+  </select>
+</mapper>

@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <title>在线properties转yaml-在线yaml转properties</title>
+    <link href="../static/images/favicon.ico" rel="shortcut icon">
+    <meta content="在线工具,程序员,工具,开发人员工具,小工具,站长工具,JSON格式化、图片转base64、yaml转json、yaml与property互转,网址导航,程序猿的在线工具"
+          name="keywords">
+    <meta content="在线工具,程序员,工具,开发人员工具,小工具,站长工具,JSON格式化、图片转base64、yaml转json、yaml与property互转,网址导航,程序猿的在线工具"
+          name="description">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/css/bootstrap-theme.min.css" rel="stylesheet">
+
+    <script src="https://apps.bdimg.com/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script src="https://cdn.staticfile.org/twitter-bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <script>
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?99f259e8c1db2b5724781c9ef9612de2";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+</head>
+<body>
+<div class="container-fluid">
+    <div class="page-header">
+        <h1><small> -- Convert between Properties and YAML Online -- <a
+                href="https://www.chenzhuofan.top"><span>卓帆网</span></a></small></h1>
+    </div>
+    <div class="row vertical-middle">
+        <div class="col-md-5 col-lg-5">
+            <div class="panel  panel-primary">
+                <div class="panel-body">
+                    <textarea class="form-control" id="from" placeholder="properties content" rows="50"
+                              style="font-size:19px; "></textarea>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-1 col-lg-1 text-center" style="line-height: 500px;">
+            <div class="btn-group-vertical">
+                <input class="btn btn-primary" onclick="Base.parseYml()" type="button" value="to yaml>>">
+                <input class="btn btn-primary" onclick="Base.parseProp()" style="margin-top: 10px;" type="button"
+                       value="<<to prop">
+            </div>
+        </div>
+
+        <div class="col-md-5 col-lg-5">
+            <div class="panel  panel-primary">
+                <div class="panel-body">
+                    <textarea class="form-control" id="to" placeholder="yaml content" rows="50"
+                              style="font-size:19px; "></textarea>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="modal fade" id="loadingModal">
+        <div style="width: 200px;height:20px; z-index: 20000; position: absolute; text-align: center; left: 50%; top: 50%;margin-left:-100px;margin-top:-10px">
+            <div class="progress progress-striped active" style="margin-bottom: 0;">
+                <div class="progress-bar" style="width: 100%;"></div>
+            </div>
+
+        </div>
+    </div>
+    <footer>
+        <div class="row">
+            <div class="col-md-11 col-lg-11 text-center">
+                <div class="fixed"><a href="https://www.miitbeian.gov.cn/">浙ICP备19008730号</a>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+</div>
+</body>
+<script>
+    /*var toYamlUrl="http://localhost:8080/y"
+    var toPropUrl="http://localhost:8080/p"*/
+    var toYamlUrl = "http://toyaml.com/y";
+    var toPropUrl = "http://toyaml.com/p";
+    var Base = {
+        parseYml: function () {
+            Base.showLoading();
+            $.ajax({
+                type: "post",
+                data: {"prop": $('#from').val()},
+                url: toYamlUrl,
+                dataType: "text",
+                success: function (data) {
+                    $('#to').val(data);
+                    Base.hideLoading();
+                }
+            });
+        },
+        parseProp: function () {
+            Base.showLoading();
+            $.ajax({
+                type: "post",
+                data: {"yaml": $('#to').val()},
+                url: toPropUrl,
+                dataType: "text",
+                success: function (data) {
+                    $('#from').val(data);
+                    Base.hideLoading();
+                }
+            });
+        },
+        showLoading: function () {
+            $("#loadingModal").modal('show');
+        },
+        hideLoading: function () {
+            $('#loadingModal').modal('hide');
+        }
+    }
+</script>
+</html>

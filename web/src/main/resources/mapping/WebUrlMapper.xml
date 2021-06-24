@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="top.chenzhuofan.web.dal.mapper.WebUrlMapper">
+    <resultMap id="BaseResultMap" type="top.chenzhuofan.web.dal.entity.WebUrl">
+        <id column="id" property="id" jdbcType="BIGINT"/>
+        <result column="uuid" property="uuid" jdbcType="VARCHAR"/>
+        <result column="title" property="title" jdbcType="VARCHAR"/>
+        <result column="url" property="url" jdbcType="VARCHAR"/>
+        <result column="ico_image" property="icoImage" jdbcType="VARCHAR"/>
+        <result column="sort" property="sort" jdbcType="TINYINT"/>
+        <result column="deleted" property="deleted" jdbcType="TINYINT"/>
+        <result column="web_category_uuid" property="webCategoryUuid" jdbcType="VARCHAR"/>
+        <result column="gmt_create" property="gmtCreate" jdbcType="TIMESTAMP"/>
+        <result column="gmt_modify" property="gmtModify" jdbcType="TIMESTAMP"/>
+    </resultMap>
+    <sql id="Base_Column_List">
+    id, uuid, title,description, url, ico_image, sort, deleted, web_category_uuid,inner_url,template_url, gmt_create, gmt_modify
+  </sql>
+    <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Long">
+        select
+        <include refid="Base_Column_List"/>
+        from web_url
+        where id = #{id,jdbcType=BIGINT}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.Long">
+    deleted from web_url
+    where id = #{id,jdbcType=BIGINT}
+  </delete>
+    <insert id="insert" parameterType="top.chenzhuofan.web.dal.entity.WebUrl">
+    insert into web_url (id, uuid, title, 
+      url, ico_image, sort, 
+      deleted, web_category_uuid,inner_url,template_url, gmt_create,
+      gmt_modify)
+    values (#{id,jdbcType=BIGINT}, #{uuid,jdbcType=VARCHAR}, #{title,jdbcType=VARCHAR}, 
+      #{url,jdbcType=VARCHAR}, #{icoImage,jdbcType=VARCHAR}, #{sort,jdbcType=TINYINT}, 
+      #{deleted,jdbcType=TINYINT}, #{webCategoryUuid,jdbcType=VARCHAR},#{innerUrl,jdbcType=TINYINT}, #{templateUrl,jdbcType=VARCHAR}, #{gmtCreate,jdbcType=TIMESTAMP},
+      #{gmtModify,jdbcType=TIMESTAMP})
+  </insert>
+    <insert id="insertSelective" parameterType="top.chenzhuofan.web.dal.entity.WebUrl">
+        insert into web_url
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                id,
+            </if>
+            <if test="uuid != null">
+                uuid,
+            </if>
+            <if test="title != null">
+                title,
+            </if>
+            <if test="url != null">
+                url,
+            </if>
+            <if test="icoImage != null">
+                ico_image,
+            </if>
+            <if test="sort != null">
+                sort,
+            </if>
+            <if test="deleted != null">
+                deleted,
+            </if>
+            <if test="webCategoryUuid != null">
+                web_category_uuid,
+            </if>
+            <if test="inner_url != null">
+                inner_url,
+            </if>
+            <if test="template_url != null">
+                template_url,
+            </if>
+            <if test="gmtCreate != null">
+                gmt_create,
+            </if>
+            <if test="gmtModify != null">
+                gmt_modify,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="id != null">
+                #{id,jdbcType=BIGINT},
+            </if>
+            <if test="uuid != null">
+                #{uuid,jdbcType=VARCHAR},
+            </if>
+            <if test="title != null">
+                #{title,jdbcType=VARCHAR},
+            </if>
+            <if test="url != null">
+                #{url,jdbcType=VARCHAR},
+            </if>
+            <if test="icoImage != null">
+                #{icoImage,jdbcType=VARCHAR},
+            </if>
+            <if test="sort != null">
+                #{sort,jdbcType=TINYINT},
+            </if>
+            <if test="deleted != null">
+                #{deleted,jdbcType=TINYINT},
+            </if>
+            <if test="webCategoryUuid != null">
+                #{webCategoryUuid,jdbcType=VARCHAR},
+            </if>
+            <if test="innerUrl != null">
+                #{innerUrl,jdbcType=TINYINT},
+            </if>
+            <if test="templateUrl != null">
+                #{templateUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="gmtCreate != null">
+                #{gmtCreate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="gmtModify != null">
+                #{gmtModify,jdbcType=TIMESTAMP},
+            </if>
+        </trim>
+    </insert>
+    <update id="updateByPrimaryKeySelective" parameterType="top.chenzhuofan.web.dal.entity.WebUrl">
+        update web_url
+        <set>
+            <if test="uuid != null">
+                uuid = #{uuid,jdbcType=VARCHAR},
+            </if>
+            <if test="title != null">
+                title = #{title,jdbcType=VARCHAR},
+            </if>
+
+            <if test="description != null">
+                description = #{description,jdbcType=VARCHAR},
+            </if>
+
+
+            <if test="url != null">
+                url = #{url,jdbcType=VARCHAR},
+            </if>
+            <if test="icoImage != null">
+                ico_image = #{icoImage,jdbcType=VARCHAR},
+            </if>
+            <if test="sort != null">
+                sort = #{sort,jdbcType=TINYINT},
+            </if>
+            <if test="deleted != null">
+                deleted = #{deleted,jdbcType=TINYINT},
+            </if>
+            <if test="webCategoryUuid != null">
+                web_category_uuid = #{webCategoryUuid,jdbcType=VARCHAR},
+            </if>
+            <if test="innerUrl != null">
+                inner_url= #{innerUrl,jdbcType=TINYINT},
+            </if>
+            <if test="templateUrl != null">
+                template_url=#{templateUrl,jdbcType=VARCHAR},
+            </if>
+            <if test="gmtCreate != null">
+                gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+            </if>
+            <if test="gmtModify != null">
+                gmt_modify = #{gmtModify,jdbcType=TIMESTAMP},
+            </if>
+        </set>
+        where id = #{id,jdbcType=BIGINT}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="top.chenzhuofan.web.dal.entity.WebUrl">
+    update web_url
+    set uuid = #{uuid,jdbcType=VARCHAR},
+      title = #{title,jdbcType=VARCHAR},
+      description = #{description,jdbcType=VARCHAR},
+      url = #{url,jdbcType=VARCHAR},
+      ico_image = #{icoImage,jdbcType=VARCHAR},
+      sort = #{sort,jdbcType=TINYINT},
+      deleted = #{deleted,jdbcType=TINYINT},
+      web_category_uuid = #{webCategoryUuid,jdbcType=VARCHAR},
+      inner_url = #{innerUrl,jdbcType=TINYINT},
+      template_url = #{templateUrl,jdbcType=VARCHAR},
+      gmt_create = #{gmtCreate,jdbcType=TIMESTAMP},
+      gmt_modify = #{gmtModify,jdbcType=TIMESTAMP}
+    where id = #{id,jdbcType=BIGINT}
+  </update>
+
+    <select id="getListByCategoryId" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from web_url
+        WHERE deleted=0 AND web_category_uuid=#{webCategoryUuid,jdbcType=VARCHAR} ORDER BY sort,id
+    </select>
+
+    <select id="selectByUrl" resultMap="BaseResultMap" parameterType="java.lang.String">
+        select
+        <include refid="Base_Column_List"/>
+        from web_url
+        where url = #{url,jdbcType=VARCHAR} ORDER BY id limit 1
+    </select>
+
+</mapper>

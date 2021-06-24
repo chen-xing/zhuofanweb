@@ -1,0 +1,216 @@
+<html lang="zh" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <meta content="导航网，json在线格式化，图床，格式转化，base64在线编码"
+          name="keywords">
+    <meta content="导航网，json在线格式化，图床，格式转化，base64在线编码"
+          name="description">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <link href="../../images/favicon.ico" rel="shortcut icon">
+    <title>程序员网址导航</title>
+    <link href="https://fonts.googleapis.com/css?family=Arimo:400,700,400italic" rel="stylesheet">
+    <link href="../css/fonts/linecons/css/linecons.css" rel="stylesheet">
+
+    <link href="https://cdn.bootcss.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+
+    <link href="https://chen-xing.gitee.io/home/static/css/bootstrap.css" rel="stylesheet">
+    <link href="https://chen-xing.gitee.io/home/static/css/xenon-core.css" rel="stylesheet">
+    <link href="https://chen-xing.gitee.io/home/static/css/xenon-components.css" rel="stylesheet">
+    <link href="https://chen-xing.gitee.io/home/static/css/xenon-skins.css" rel="stylesheet">
+    <!--[if lt IE 9]>
+    <script src="https://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    <link href="../css/demo.4a8ab28c.css" rel="prefetch">
+    <link href="../js/demo.ad532090.js" rel="prefetch">
+    <link as="style" href="../css/app.e13832ac.css" rel="preload">
+    <link as="style" href="../css/chunk-vendors.4b7e327a.css" rel="preload">
+    <link as="style" href="../css/chunk-vendors.4b7e327a.css" rel="preload">
+    <link as="script" href="../js/app.26117a0e.js" rel="preload">
+    <link as="script" href="https://chen-xing.gitee.io/home/static/js/chunk-vendors.0bc935fb.js" rel="preload">
+    <link href="../css/chunk-vendors.4b7e327a.css" rel="stylesheet">
+    <link href="../css/app.e13832ac.css" rel="stylesheet">
+    <script type="text/javascript">
+        var _hmt = _hmt || [];
+        (function () {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?99f259e8c1db2b5724781c9ef9612de2";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+    <style type="text/css">
+        * {
+            margin: 0px;
+            padding: 0px;
+        }
+
+        body {
+            background: #f3f5f7;
+        }
+
+        .newInfo {
+            background: #ffffff;
+            margin: 20px 100px;
+            border: 2px solid #f5f5f5;
+        }
+
+        h2 {
+            padding: 20px;
+            margin-bottom: 20px;
+            color: #5184eb;
+            border-bottom: 4px solid #5184eb;
+        }
+
+        ul {
+            list-style: none;
+        }
+
+        ul li {
+            line-height: 60px;
+            padding-left: 10px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            border-bottom: 1px dashed #acacac;
+        }
+
+        ul a {
+            color: #000000;
+            text-decoration: none;
+            font-size: 20px;
+            height: 100%;
+            width: 90%;
+            display: inline-block;
+        }
+
+        ul li:hover {
+            background: #ccc;
+        }
+
+        li span {
+            float: right;
+            margin-right: 20px;
+        }
+    </style>
+</head>
+
+<body class="page-body boxed-container">
+<nav class="navbar horizontal-menu navbar-fixed-top">
+    <div class="navbar-inner">
+        <div class="navbar-brand" style="width: 300px;height: 100px;">
+            <a class="logo" href="/">
+                <img alt="" class="hidden-xs" src="/images/logo.png" width="100%">
+            </a>
+        </div>
+        <div class="navbar-mobile-clear"></div>
+        <a href="../" target="_blank"><img
+                alt="Fork me on GitHub"
+                src="https://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" style="position: absolute; top: 0; right: 0; border: 0;"></a>
+    </div>
+</nav>
+<div class="page-container" style="max-width: 2500px;">
+    <div class="main-content" style="">
+        <div class="newInfo">
+            <h2>今日要闻</h2>
+            <ul th:each="itNewsBean : ${newsInfo}">
+                <li><a target="_blank" th:href="${itNewsBean.url}" th:text="${itNewsBean.title}"></a><span
+                        th:text="${itNewsBean.gmtCreate}"></span></li>
+            </ul>
+        </div>
+        <!-- Main Footer -->
+        <footer class="main-footer sticky footer-type-1 fixed">
+            <div class="footer-inner">
+                <div class="footer-text">
+                    &copy; 浙ICP备19008730号
+                </div>
+                <div class="go-up">
+                    <a href="#" rel="go-top">
+                        <i class="fa-angle-up"></i>
+                    </a>
+                </div>
+            </div>
+        </footer>
+    </div>
+
+</div>
+<!-- Bottom Scripts -->
+<script src="https://cdn.bootcss.com/jquery/2.2.1/jquery.min.js"></script>
+<script>$(document).ready(function () {
+    $(document).on('click', '.has-sub',
+        function () {
+            var _this = $(this);
+            if (!$(this).hasClass('expanded')) {
+                setTimeout(function () {
+                        _this.find('ul').attr("style", "")
+                    },
+                    300);
+            } else {
+                $('.has-sub ul').each(function (id, ele) {
+                    var _that = $(this);
+                    if (_this.find('ul')[0] != ele) {
+                        setTimeout(function () {
+                                _that.attr("style", "")
+                            },
+                            300);
+                    }
+                })
+            }
+        })
+    $('.user-info-menu .hidden-sm').click(function () {
+        if ($('.sidebar-menu').hasClass('collapsed')) {
+            $('.has-sub.expanded > ul').attr("style", "")
+        } else {
+            $('.has-sub.expanded > ul').show()
+        }
+    })
+    $("#main-menu li ul li").click(function () {
+        $(this).siblings('li').removeClass('active');
+        $(this).addClass('active');
+    });
+    $("a.smooth").on('click', function (ev) {
+        ev.preventDefault();
+        public_vars.$mainMenu.add(public_vars.$sidebarProfile).toggleClass('mobile-is-visible');
+        ps_destroy();
+        $("html, body").animate({
+                scrollTop: $($(this).attr("href")).offset().top - 30
+            },
+            {
+                duration: 500,
+                easing: "swing"
+            });
+    });
+
+    var href = "";
+    var pos = 0;
+    $("a.smooth").click(function (e) {
+        $("#main-menu li").each(function () {
+            $(this).removeClass("active");
+        });
+        $(this).parent("li").addClass("active");
+        e.preventDefault();
+        href = $(this).attr("href");
+        pos = $(href).position().top - 30;
+    });
+
+    $('.xe-widget.xe-conversations.box2.label-info').each(function () {
+        $(this).click(function () {
+            var url = $(this).attr('data-original-title');
+            window.open(url, '_blank')
+        });
+    });
+
+    return false;
+});
+
+</script>
+<script src="https://cdn.bootcss.com/twitter-bootstrap/3.3.1/js/bootstrap.min.js"></script>
+<script src="https://chen-xing.gitee.io/home/static/js/TweenMax.min.js"></script>
+<script src="../js/resizeable.js"></script>
+<script src="../js/joinable.js"></script>
+<script src="../js/xenon-api.js"></script>
+<script src="../js/xenon-toggles.js"></script>
+<script src="../js/xenon-custom.js"></script>
+</body>
+
+</html>
