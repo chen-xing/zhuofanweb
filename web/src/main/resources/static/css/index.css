@@ -1,0 +1,125 @@
+body {
+    background: #e9ecef;
+}
+.custom-ul {
+    width: 200px;
+    margin-top: 60px;
+    margin-left: 40px;
+}
+
+.indexboxs {
+    background: #fff;
+    margin: 8px 0;
+    border-radius: 20px !important;
+    border:1px solid #0e7dec02 ;
+}
+
+.myfontsize_14_bold{
+    font-size: 14px;
+    font-weight: bold;
+}
+
+.myfontsize_12_normal{
+    font-size: 12px;
+    font-weight: normal;
+}
+
+.indexboxs div{
+    background: #fff;
+    border: none;
+}
+
+.indexbox_title {
+    padding: 13px 36px;
+    border-bottom: 1px solid #f1f4f9 !important;
+    border-radius: 20px;
+    color: #3c3c3c;
+    font-size: 16px;
+    cursor: pointer;
+    position: relative;
+    font-weight:800;
+}
+
+.custom-ul li{
+    width: 160px;
+    border-left: 1px solid darkgray ;
+}
+
+.mycardDiv{
+    max-width: 320px;
+    float: left;
+
+}
+.mycard{
+    width: 300px;
+    height: 80px;
+}
+.myImg {
+    width: 40px;
+    height: 40px;
+    line-height:70px;
+    margin-left:5px;
+}
+
+/**美化滚动条*/
+::-webkit-scrollbar {
+    width: 5px;
+    height: 11px;
+    border: none;
+    background: #ddd !important;
+}
+
+::-webkit-scrollbar-track-piece {
+    border: none;
+    position: absolute;
+    padding: 0;
+    box-shadow: none;
+    background-color: #ddd;
+    border-radius: 1px;
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    background-color: #999;
+    border-radius: 0px;
+    border: none;
+}
+
+::-webkit-scrollbar-thumb:horizontal {
+    background-color: #999;
+    border-radius: 0px;
+    border: none;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    height: 12px
+}
+
+::-webkit-scrollbar-button:vertical {
+    display: none
+}
+
+::-webkit-scrollbar-track:vertical {
+    background-color: black
+}
+
+::-webkit-scrollbar-track-piece {
+    background: #FFF
+}
+
+::-webkit-scrollbar-thumb:vertical {
+    background-color: #8E8E8E;
+    border-radius: 5px
+}
+
+::-webkit-scrollbar-thumb:vertical:hover {
+    background-color: #3B3B3B
+}
+
+::-webkit-scrollbar-corner:vertical {
+    background-color: #535353
+}
+
+::-webkit-scrollbar-resizer:vertical {
+    background-color: #FF6E00
+}

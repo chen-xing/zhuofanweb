@@ -2,11 +2,11 @@ package top.chenzhuofan.web.rest;
 
 import cn.hutool.core.date.DateUnit;
 import cn.hutool.core.date.DateUtil;
+import cn.hutool.core.io.unit.DataSize;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.util.StringUtils;
-import org.springframework.util.unit.DataSize;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
 import top.chenzhuofan.web.bean.BaseResponse;
@@ -108,29 +108,29 @@ public class WebApiController {
     @ResponseBody
     @MethodMonitor
     public BaseResponse<String> getImageUrl(@RequestParam("Filedata") MultipartFile file) {
-        BaseResponse<String> baseResponse=new BaseResponse<String>(null);
-        long size=file.getSize();
-        if(DataSize.ofMegabytes(5).compareTo(DataSize.ofBytes(size))>1){
+        BaseResponse<String> baseResponse = new BaseResponse<String>(null);
+        long size = file.getSize();
+        if (DataSize.ofMegabytes(5).compareTo(DataSize.ofBytes(size)) > 1) {
             baseResponse.setSuccess(false);
             baseResponse.setData("超过文件的最大5M的限制");
-        }else{
+        } else {
             String fileName = file.getOriginalFilename();
             // 获取后缀
             String suffixName = fileName.substring(fileName.lastIndexOf("."));
 
             try {
-                String uuid= DateUtil.format(new Date(),"yyyyMMddHHmmssSSS");
-                String finalUrl=githubService.getUploadUrl(uuid+suffixName,file.getBytes());
-                if(StringUtils.isEmpty(finalUrl)){
+                String uuid = DateUtil.format(new Date(), "yyyyMMddHHmmssSSS");
+                String finalUrl = githubService.getUploadUrl(uuid + suffixName, file.getBytes());
+                if (StringUtils.isEmpty(finalUrl)) {
                     baseResponse.setSuccess(false);
                     baseResponse.setData("内部服务错误");
                 } else {
-                    log.info("upload url is:{}",finalUrl);
+                    log.info("upload url is:{}", finalUrl);
                     baseResponse.setSuccess(true);
                     baseResponse.setData(finalUrl);
                 }
             } catch (IOException e) {
-                log.error("get file byte error:{}",e.getMessage());
+                log.error("get file byte error:{}", e.getMessage());
                 baseResponse.setSuccess(false);
                 baseResponse.setData(e.getMessage());
             }

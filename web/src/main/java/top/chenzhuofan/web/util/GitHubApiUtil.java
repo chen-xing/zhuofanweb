@@ -32,11 +32,12 @@ public class GitHubApiUtil {
                 HttpRequest.put(url)
                         .header("Content-Type", "application/json")
                         .header("Authorization", MessageFormat.format("token {0}", token))
-                        .body(new Gson().toJson(bodyMap)).timeout(4000)
+                        .body(new Gson().toJson(bodyMap))
+                        .timeout(4000)
                         .execute();
-        boolean result=new Integer(201).equals(httpResponse.getStatus());
-        if(!result){
-            log.error("image upload github error:{}",httpResponse.body());
+        boolean result = new Integer(201).equals(httpResponse.getStatus());
+        if (!result) {
+            log.error("image upload github error:{}", httpResponse.body());
         }
         return result;
     }
@@ -47,5 +48,5 @@ public class GitHubApiUtil {
         byte[] bytes = fileReader.readBytes();
         boolean falg = GitHubApiUtil.create(url, bytes, "c09253ff7d906eb59ec1db7ed74c441d2c245cb3");
         System.out.println(falg);
-        }
+    }
 }
