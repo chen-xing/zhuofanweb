@@ -21,7 +21,7 @@
                     <a class="nav-link" href="/figurebed" tabindex="-1" aria-disabled="true">在线图床</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/figurebed" tabindex="-1" aria-disabled="true">在线图床</a>
+                    <a class="nav-link" href="http://md.94rg.com/" tabindex="-1" aria-disabled="true">markdown美化</a>
                 </li>
             </ul>
             <form class="d-flex">

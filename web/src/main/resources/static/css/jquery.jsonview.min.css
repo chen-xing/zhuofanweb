@@ -1,47 +1,141 @@
-/* Syntax highlighting for JSON objects */
-ul.json-dict, ol.json-array {
-    list-style-type: none;
-    margin: 0 0 0 1px;
-    border-left: 1px dotted #ccc;
-    padding-left: 2em;
+@charset "utf-8";
+/* CSS Document */
+div.ControlsRow, div.HeadersRow {
+    font-family: Georgia;
 }
-.json-string {
-    color: #0B7500;
+
+div.Canvas {
+
+    font-family: Lucida Console, Georgia;
+
+    font-size: 13px;
+
+    background-color: #ECECEC;
+
+    color: #000000;
+
+    border: solid 1px #CECECE;
+
 }
-.json-literal {
-    color: #1A01CC;
+
+.ObjectBrace {
+
+    color: #00AA00;
+
     font-weight: bold;
+
 }
 
-/* Toggle button */
-a.json-toggle {
-    position: relative;
-    color: inherit;
-    text-decoration: none;
-}
-a.json-toggle:focus {
-    outline: none;
-}
-a.json-toggle:before {
-    color: #aaa;
-    content: "\25BC"; /* down arrow */
-    position: absolute;
-    display: inline-block;
-    width: 1em;
-    left: -1em;
-}
-a.json-toggle.collapsed:before {
-    transform: rotate(-90deg); /* Use rotated down arrow, prevents right arrow appearing smaller than down arrow in some browsers */
-    -ms-transform: rotate(-90deg);
-    -webkit-transform: rotate(-90deg);
+.ArrayBrace {
+
+    color: #0033FF;
+
+    font-weight: bold;
+
 }
 
-/* Collapsable placeholder links */
-a.json-placeholder {
-    color: #aaa;
-    padding: 0 1em;
+.PropertyName {
+
+    color: #CC0000;
+
+    font-weight: bold;
+
+}
+
+.String {
+
+    color: #007777;
+
+}
+
+.Number {
+
+    color: #AA00AA;
+
+}
+
+.Boolean {
+
+    color: #0000FF;
+
+}
+
+.Function {
+
+    color: #AA6633;
+
+    text-decoration: italic;
+
+}
+
+.Null {
+
+    color: #0000FF;
+
+}
+
+.Comma {
+
+    color: #000000;
+
+    font-weight: bold;
+
+}
+
+PRE.CodeContainer {
+
+    margin-top: 0px;
+
+    margin-bottom: 0px;
+
+}
+
+PRE.CodeContainer img {
+
+    cursor: pointer;
+
+    border: none;
+
+    margin-bottom: -1px;
+
+}
+
+#CollapsibleViewDetail a {
+    padding-left: 10px;
+}
+
+#ControlsRow {
+    white-space: nowrap;
+    font: 11px Georgia;
+
+}
+
+#TabSizeHolder {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+#HeaderTitle {
+    text-align: right;
+    font-size: 11px;
+}
+
+#HeaderSubTitle {
+    margin-bottom: 2px;
+    margin-top: 0px
+}
+
+#RawJson {
+    width: 99%;
+    height: 120px;
+
+}
+
+A.OtherToolsLink {
+    color: #555;
     text-decoration: none;
 }
-a.json-placeholder:hover {
+
+A.OtherToolsLink:hover {
     text-decoration: underline;
 }
