@@ -16,7 +16,7 @@
         }
 
         .cx-compnent {
-            margin: 10px;
+            margin: 5px;
         }
 
         .checkbox-inline {
@@ -37,21 +37,52 @@
             outline: none;
             border: 1px solid #eee;
             width: 100%;
+            min-height: 700px;
+            overflow: visible;
+        }
+
+        .cx-col-auto {
+            margin-top: 20px;
         }
     </style>
     <div class="container-fluid">
         <nav class="navbar navbar-light bg-light">
-            <form class="container-fluid justify-content-start">
-                <button id="btn-json-viewer" type="button" class="btn btn-primary .btn-lg cx-compnent">格式化</button>
-                <button type="button" class="btn btn-success .btn-lg cx-compnent" onclick="copy();">复制格式化的内容</button>
+            <form class="row g-3">
+                <div class="form-check cx-col-auto col-auto" style="margin-left:50px;display: none;">
+                    <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+                    <label class="form-check-label" for="flexRadioDefault1">
+                        引号
+                    </label>
+                </div>
+                <select class="form-select form-select-lg mb-3 cx-col-auto col-auto"
+                        aria-label=".form-select-lg example"
+                        style="width:100px !important;display:inline-block;margin-left: 40px;" id="myselect">
+                    <option selected value="99">展开</option>
+                    <option value="1">叠起</option>
+                    <option value="3">2级</option>
+                    <option value="4">3级</option>
+                    <option value="5">4级</option>
+                    <option value="6">5级</option>
+                    <option value="7">6级</option>
+                    <option value="8">7级</option>
+                </select>
+
+
+                <button id="btn-json-viewer" type="button"
+                        class="btn btn-primary .btn-lg cx-compnent cx-col-auto col-auto" onclick="Process()"
+                        style="margin-left: 10px;padding-left: 30px;padding-right: 30px;margin-right: 0">格式化
+                </button>
+                <button type="button" class="btn btn-success .btn-lg cx-compnent cx-col-auto col-auto"
+                        onclick="SelectAllClicked();">复制格式化的内容
+                </button>
             </form>
         </nav>
         <div class="row justify-content-md-center">
             <div class="cx-div">
-                <textarea class="cx-fromcontrol " id="json-input"></textarea>
+                <textarea class="cx-fromcontrol " id="RawJson"></textarea>
             </div>
             <div class="cx-div">
-                <pre id="json-renderer" class="cx-fromcontrol"></pre>
+                <pre id="Canvas" class="cx-fromcontrol"></pre>
             </div>
         </div>
         <div class="alert alert-danger fixed-bottom" role="alert" id="toolTip" style="display: none;margin:10px;">
@@ -60,46 +91,18 @@
     <script src="/static/js/jquery.jsonview.min.js" type="text/javascript"></script>
     <script type="text/javascript">
         $(function () {
-            $('#btn-json-viewer').click(function () {
-                try {
-                    var input = eval('(' + $('#json-input').val() + ')');
-                } catch (error) {
-                    $("#toolTip").text(error).show();
-                    setTimeout(function () {
-                        $("#toolTip").hide();
-                    }, 3000);
+            //切换显示级数
+            $("#myselect").change(function () {
+                var opt = $("#myselect").val();
+                if (opt == 100) {
+                    ExpandAllClicked();
+                } else if (opt == 1) {
+                    CollapseAllClicked();
+                } else {
+                    CollapseLevel(opt);
                 }
-                var options = {
-                    collapsed: false,
-                    withQuotes:true
-                };
-                $('#json-renderer').jsonViewer(input, options);
             });
         });
 
-        function copy() {
-            var Url2 = document.getElementById("json-renderer");
-            var text = $("#json-renderer").text();
-            copyToClip(text, "复制成功");
-        }
-
-        /**
-         * 复制内容到粘贴板
-         * content : 需要复制的内容
-         * message : 复制完后的提示，不传则默认提示"复制成功"
-         */
-        function copyToClip(content, message) {
-            var aux = document.createElement("input");
-            aux.setAttribute("value", content);
-            document.body.appendChild(aux);
-            aux.select();
-            document.execCommand("copy");
-            document.body.removeChild(aux);
-            if (message == null) {
-                toastr.success("复制成功");
-            } else {
-                toastr.success(message);
-            }
-        }
     </script>
 </@compress>

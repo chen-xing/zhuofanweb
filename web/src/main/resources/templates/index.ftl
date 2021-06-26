@@ -31,13 +31,13 @@
 
                             <#list indexPageUrlInfoBean.webUrlBeanList as webUrlBean>
 
-                                <div class="card mb-3 mycardDiv">
+                                <div class="card mb-3 mycardDiv" onclick="gourl('${webUrlBean.url}')">
                                     <div class="row g-0 mycard">
                                         <div class="col-md-4 myImg">
                                             <img src="${webUrlBean.icoImage}"
                                                  class="img-fluid rounded-start " alt="...">
                                         </div>
-                                        <div class="col-md-10">
+                                        <div class="col-md-10 mycontent">
                                             <div class="card-body">
                                                 <h5 class="card-title myfontsize_14_bold">${webUrlBean.title}</h5>
                                                 <p class="card-text text-truncate myfontsize_12_normal">
@@ -55,7 +55,5 @@
             </main>
         </div>
     </div>
-
-    <a href="#top" class="el-backtop" style="right: 50px; bottom: 70px;"><i class="fa fa-arrow-up fa-lg" aria-hidden="true"></i></a>
     <@footer></@footer>
 </@compress>

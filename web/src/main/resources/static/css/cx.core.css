@@ -61,12 +61,18 @@ body {
 .mycard{
     width: 300px;
     height: 80px;
+    cursor:pointer;
 }
+
+
 .myImg {
     width: 40px;
     height: 40px;
     line-height:70px;
     margin-left:5px;
+}
+.mycontent{
+    width: 255px;
 }
 
 /**美化滚动条*/

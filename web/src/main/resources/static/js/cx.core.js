@@ -16,3 +16,7 @@ $(function () {
         $this.addClass("active");
     })
 });
+
+function gourl(url) {
+    window.open(url, "_blank");
+}

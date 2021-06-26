@@ -68,6 +68,6 @@ public class IndexController {
         }
         List<ItNewsBean> itNewsBeanList = indexPageService.getItNewsList(30, pageIndex);
         model.addAttribute("newsInfo", itNewsBeanList);
-        return "news/newsInfo";
+        return "news";
     }
 }
