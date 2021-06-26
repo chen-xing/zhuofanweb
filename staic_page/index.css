@@ -3,8 +3,8 @@ body {
 }
 .custom-ul {
     width: 200px;
-    margin-top: 60px;
-    margin-left: 40px;
+    margin-top: 50px;
+    margin-left: 50px;
 }
 
 .indexboxs {
@@ -15,14 +15,14 @@ body {
 }
 
 .myfontsize_14_bold{
-    font-size: 14px;
-    font-weight: bold;
+   font-size: 14px;
+   font-weight: bold;
 }
 
 .myfontsize_12_normal{
     font-size: 12px;
     font-weight: normal;
-}
+ }
 
 .indexboxs div{
     background: #fff;
