@@ -1,8 +1,8 @@
 <#include "include/macros.ftl">
 <@compress single_line=false>
     <@header title="程序员导航网"
-    keywords="导航网，json在线格式化，图床，格式转化，base64在线编码"
-    description="导航网，json在线格式化，图床，格式转化，base64在线编码">
+    keywords="程序员之家,程序员首页,程序员门户网站,程序员网址导航,网址导航,程序员门户,coder,coder's home,coderhome,coder home,coders' home"
+    description="程序员导航网，便于程序员日常使用的网址集合，你想要的都在这里☺。">
     </@header>
 
     <div class="container-fluid">

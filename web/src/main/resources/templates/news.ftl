@@ -1,8 +1,8 @@
 <#include "include/macros.ftl">
 <@compress single_line=false>
     <@header title="it新闻一站试解决"
-    keywords="导航网，json在线格式化，图床，格式转化，base64在线编码"
-    description="导航网，json在线格式化，图床，格式转化，base64在线编码">
+    keywords="IT新闻,it news,互联网新闻,业界新闻,IT资讯,IT业界,新闻频道"
+    description="csdn、博客园最新的博客一网打尽">
     </@header>
     <style type="text/css">
         * {

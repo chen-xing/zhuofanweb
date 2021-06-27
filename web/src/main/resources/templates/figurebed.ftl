@@ -1,7 +1,7 @@
 <#include "include/macros.ftl">
 <@compress single_line=false>
     <@header title="高效免费图床"
-    keywords="导航网，json在线格式化，图床，格式转化，base64在线编码"
+    keywords="图片免费保存和外链图片,免费图床"
     description="优启梦永久免费图床，稳定图片外链；支持批量上传,即时预览,不限制流量,不限制外链数,永久保存,阿里巴巴图片服务器,全网CDN图床,高速稳定,支持网页,手机上传,无需插件,支持JPG,GIF,PNG等文件格式,微博图床,土豆是个好图床">
     </@header>
     <style type="text/css">

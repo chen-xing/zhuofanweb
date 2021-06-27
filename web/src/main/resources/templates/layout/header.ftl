@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark " id="top">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
-            <img src="/static/image/logo.png" alt="" width="140"
-                 height="42">程序员导航网
+            <img src="/static/image/logo.jpg" alt="" width="140"
+                 height="42">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"

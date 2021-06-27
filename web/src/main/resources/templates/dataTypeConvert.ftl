@@ -1,8 +1,8 @@
 <#include "include/macros.ftl">
 <@compress single_line=false>
     <@header title="在线properties、yaml、json格式相互转化"
-    keywords="导航网，json在线格式化，图床，格式转化，base64在线编码"
-    description="导航网，json在线格式化，图床，格式转化，base64在线编码">
+    keywords="properties yml json三者在线互转工具"
+    description="yaml json,属性文件properties json,properties,属性文件yaml转json,yml properties,properties yml json在线转换工具,属性文件properties yml json互转,在线JSON转yaml,在线properties转yaml,在线yaml转properties,yaml转JSON,yml to json ,json to yml,yml to properties ,json to properties">
     </@header>
     <div class="container-fluid">
         <div class="row vertical-middle">
@@ -17,13 +17,13 @@
 
             <div class="col-md-1 col-lg-1 text-center" style="line-height: 500px;">
                 <div class="btn-group-vertical">
-                    <input class="btn btn-primary" onclick="Base.dataTypeConvert(0)" type="button" value="json to yaml -->">
+                    <input class="btn btn-primary" onclick="Base.dataTypeConvert(0)" type="button" value="json to yaml">
                     <input class="btn btn-success" onclick="Base.dataTypeConvert(1)" style="margin-top: 10px;" type="button"
-                           value="yaml to json -->">
+                           value="yaml to json">
                     <input class="btn btn-info" onclick="Base.dataTypeConvert(2)" style="margin-top: 10px;" type="button"
-                           value="yaml to prop -->">
+                           value="yaml to prop">
                     <input class="btn btn-danger" onclick="Base.dataTypeConvert(3)" style="margin-top: 10px;" type="button"
-                           value="prop to yaml -->">
+                           value="prop to yaml">
                 </div>
             </div>
 

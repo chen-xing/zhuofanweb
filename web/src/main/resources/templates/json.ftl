@@ -1,8 +1,8 @@
 <#include "include/macros.ftl">
 <@compress single_line=false>
-    <@header title="json格式化"
-    keywords="导航网，json在线格式化，图床，格式转化，base64在线编码"
-    description="导航网，json在线格式化，图床，格式转化，base64在线编码">
+    <@header title="在线JSON校验格式化工具"
+    keywords="在线,JSON,JSON 校验,格式化,xml转json 工具,在线工具,json视图,在线json格式化工具,json 格式化,json格式化工具,json字符串格式化,json 在线查看器,json在线,json 在线验证,json tools online,在线文字对比工具,json解析"
+    description="在线,JSON,JSON 校验,格式化,xml转json 工具,在线工具,json视图,在线json格式化工具,json 格式化,json格式化工具,json字符串格式化,json 在线查看器,json在线,json 在线验证,json tools online,在线文字对比工具,json解析">
     </@header>
     <link href="/static/css/jquery.jsonview.min.css" rel="stylesheet" type="text/css">
     <style type="text/css">
@@ -67,7 +67,10 @@
                     <option value="8">7级</option>
                 </select>
 
-
+                <button type="button" id="clearEscape"
+                        class="btn btn-secondary .btn-lg cx-compnent cx-col-auto col-auto"
+                        style="margin-left: 10px;padding-left: 30px;padding-right: 30px;margin-right: 0">去除转义
+                </button>
                 <button id="btn-json-viewer" type="button"
                         class="btn btn-primary .btn-lg cx-compnent cx-col-auto col-auto" onclick="Process()"
                         style="margin-left: 10px;padding-left: 30px;padding-right: 30px;margin-right: 0">格式化
@@ -102,7 +105,19 @@
                     CollapseLevel(opt);
                 }
             });
+
+            //清除转义
+            $("#clearEscape").click(function () {
+                var rawJson = $("#RawJson").val();
+                if ($.trim(rawJson) != '') {
+                    var reg = /\\/g;
+                    //使用replace方法将全部匹配正则表达式的转义符替换为空
+                    var replaceAfter = rawJson.replace(reg, '');
+                    $("#RawJson").val(replaceAfter);
+                }
+            });
         });
+
 
     </script>
 </@compress>

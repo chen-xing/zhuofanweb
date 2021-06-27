@@ -16,6 +16,16 @@
                 background-color: #f8f9fa!important;
             }
         </style>
+<#--        引入百度统计-->
+        <script type="text/javascript">
+            var _hmt = _hmt || [];
+            (function () {
+                var hm = document.createElement("script");
+                hm.src = "https://hm.baidu.com/hm.js?99f259e8c1db2b5724781c9ef9612de2";
+                var s = document.getElementsByTagName("script")[0];
+                s.parentNode.insertBefore(hm, s);
+            })();
+        </script>
     </head>
     <body>
 <#--    <canvas id="c" style="position:absolute;top:0px;left:0px;z-index:-1;margin: 0 auto;"></canvas>-->

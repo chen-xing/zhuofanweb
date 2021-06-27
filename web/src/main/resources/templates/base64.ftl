@@ -1,8 +1,8 @@
 <#include "include/macros.ftl">
 <@compress single_line=false>
-    <@header title="在线图片转Base64"
-    keywords="导航网，json在线格式化，图床，格式转化，base64在线编码"
-    description="导航网，json在线格式化，图床，格式转化，base64在线编码">
+    <@header title="base64图片在线转换工具"
+    keywords="图片Base64编码,Base64 DataUrl编码,base64图片转换工具,base64图片在线转换"
+    description="base64图片转换工具，是一款可以在线任意图片格式转Base64 DataUrl编码工具,可以让你很方便地在没有上传文件的条件下将图片插入其它的网页、编辑器中。">
     </@header>
     <div class="container-fluid">
         <input class="btn btn-primary" id="btnfile" style="display: none;" type="file">
@@ -10,7 +10,8 @@
         <hr>
         <img id="showImage" style="max-height: 300px; height: 8em; min-width:8em;margin-left:20px;">
         <hr>
-        <textarea class="layui-input-block" style="display: block; width: 100%;height: 40em;margin-left: 0px;"></textarea>
+        <textarea class="layui-input-block"
+                  style="display: block; width: 100%;height: 40em;margin-left: 0px;"></textarea>
     </div>
 
     <script type="text/javascript">
