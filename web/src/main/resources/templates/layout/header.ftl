@@ -1,8 +1,8 @@
 <nav class="navbar navbar-expand-lg navbar-dark bg-dark " id="top">
     <div class="container-fluid">
         <a class="navbar-brand" href="/">
-            <img src="/static/image/logo.jpg" alt="" width="140"
-                 height="42">
+            <img src="/static/image/logo.jpg" alt="" width="102"
+                 height="40">
         </a>
         <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                 data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
@@ -18,17 +18,19 @@
                     <a class="nav-link" href="/json">json格式化</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/figurebed" tabindex="-1" aria-disabled="true">在线图床</a>
+                    <a class="nav-link" href="/figurebed" tabindex="-1" aria-disabled="true">免费图床</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="http://md.94rg.com/" tabindex="-1" aria-disabled="true">markdown美化</a>
+                    <a class="nav-link" href="http://md.94rg.com/" tabindex="-1" aria-disabled="true">md美化</a>
                 </li>
             </ul>
             <form class="d-flex">
-                <input id="searchKeyWorld" class="form-control me-2" type="search" placeholder="Search" aria-label="Search" style="width:600px;height:50px;line-height: 50px;">
+                <input id="searchKeyWorld" class="form-control me-2" type="search" placeholder="Search"
+                       aria-label="Search" style="width:600px;height:40px;line-height: 40px;" onkeydown="clientClickButton(event)">
                 <button class="btn btn-primary" type="button" onclick="search();">Search</button>
             </form>
         </div>
     </div>
-    <a href="#top" class="el-backtop" style="right: 50px; bottom: 70px;"><i class="fa fa-arrow-up fa-lg" aria-hidden="true"></i></a>
+    <a href="#top" class="el-backtop" style="right: 50px; bottom: 70px;"><i class="fa fa-arrow-up fa-lg"
+                                                                            aria-hidden="true"></i></a>
 </nav>

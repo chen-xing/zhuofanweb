@@ -1,6 +1,6 @@
 function search() {
-    var searchKey= $("#searchKeyWorld").val();
-    if(null==searchKey || ''==searchKey){
+    var searchKey = $("#searchKeyWorld").val();
+    if (null == searchKey || '' == searchKey) {
         return false;
     }
     var url =
@@ -10,8 +10,8 @@ function search() {
 }
 
 $(function () {
-    $("#sidebarMenu").find("li").bind("click",function () {
-        $this=$(this);
+    $("#sidebarMenu").find("li").bind("click", function () {
+        $this = $(this);
         $this.siblings().removeClass("active");
         $this.addClass("active");
     })
@@ -19,4 +19,11 @@ $(function () {
 
 function gourl(url) {
     window.open(url, "_blank");
+}
+
+function clientClickButton(event) {
+    if (event.keyCode == 13) {
+        search();
+        event.returnValue = false;
+    }
 }

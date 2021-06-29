@@ -14,7 +14,8 @@
                 <p><a class="nav-link" aria-current="page" href="/news/1">it早报</a></p>
                 <p><a class="nav-link" aria-current="page" href="/dataTypeConvert">万能格式化转换</a></p>
                 <p><a class="nav-link" aria-current="page" href="/base64">在线base64</a></p>
-                <p><a class="nav-link" aria-current="page" href="/about">在线base64</a></p>
+                <p><a class="nav-link" aria-current="page" href="/string">在线字符串处理</a></p>
+                <p><a class="nav-link" aria-current="page" href="/about">关于</a></p>
             </div>
         </div>
     </div>

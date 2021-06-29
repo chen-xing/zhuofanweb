@@ -46,8 +46,9 @@ public class IndexController {
     @MethodMonitor
     public String gotoUrl(@PathVariable("urlKey") String urlKey, Model model) {
         String templateUrl = indexPageService.getUrlTemplate("/" + urlKey);
+        // 数据库无配置的时候，走默认配置
         if (StringUtils.isEmpty(templateUrl)) {
-            return "index";
+            return urlKey;
         }
         return templateUrl;
     }
