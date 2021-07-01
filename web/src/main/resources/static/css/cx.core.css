@@ -1,6 +1,7 @@
 body {
     background: #e9ecef;
 }
+
 .custom-ul {
     width: 200px;
     margin-top: 60px;
@@ -11,20 +12,20 @@ body {
     background: #fff;
     margin: 8px 0;
     border-radius: 20px !important;
-    border:1px solid #0e7dec02 ;
+    border: 1px solid #0e7dec02;
 }
 
-.myfontsize_14_bold{
+.myfontsize_14_bold {
     font-size: 14px;
     font-weight: bold;
 }
 
-.myfontsize_12_normal{
+.myfontsize_12_normal {
     font-size: 12px;
     font-weight: normal;
 }
 
-.indexboxs div{
+.indexboxs div {
     background: #fff;
     border: none;
 }
@@ -37,41 +38,43 @@ body {
     font-size: 16px;
     cursor: pointer;
     position: relative;
-    font-weight:800;
+    font-weight: 800;
 }
 
 .indexbox_body {
     border-radius: 20px !important;
 }
 
-.custom-ul li{
+.custom-ul li {
     width: 160px;
-    border-left: 1px dashed  gray ;
+    border-left: 1px dashed gray;
 }
 
-.custom-ul .active{
+.custom-ul .active {
     background-color: #dddddd;
 }
 
-.mycardDiv{
+.mycardDiv {
     max-width: 320px;
     float: left;
 
 }
-.mycard{
+
+.mycard {
     width: 300px;
     height: 80px;
-    cursor:pointer;
+    cursor: pointer;
 }
 
 
 .myImg {
     width: 40px;
     height: 40px;
-    line-height:70px;
-    margin-left:5px;
+    line-height: 70px;
+    margin-left: 5px;
 }
-.mycontent{
+
+.mycontent {
     width: 255px;
 }
 
@@ -142,8 +145,8 @@ body {
 .el-backtop {
     position: fixed;
     background-color: #fff;
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     color: #409eff;
     display: flex;

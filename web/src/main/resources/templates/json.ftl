@@ -54,7 +54,7 @@
                         引号
                     </label>
                 </div>
-                <select class="form-select form-select-lg mb-3 cx-col-auto col-auto"
+                <select class="form-select form-select mb-3 cx-col-auto col-auto"
                         aria-label=".form-select-lg example"
                         style="width:100px !important;display:inline-block;margin-left: 40px;" id="myselect">
                     <option selected value="99">展开</option>
@@ -68,14 +68,14 @@
                 </select>
 
                 <button type="button" id="clearEscape"
-                        class="btn btn-secondary .btn-lg cx-compnent cx-col-auto col-auto"
+                        class="btn btn-secondary cx-compnent cx-col-auto col-auto"
                         style="margin-left: 10px;padding-left: 30px;padding-right: 30px;margin-right: 0">去除转义
                 </button>
                 <button id="btn-json-viewer" type="button"
-                        class="btn btn-primary .btn-lg cx-compnent cx-col-auto col-auto" onclick="Process()"
+                        class="btn btn-primary cx-compnent cx-col-auto col-auto" onclick="Process()"
                         style="margin-left: 10px;padding-left: 30px;padding-right: 30px;margin-right: 0">格式化
                 </button>
-                <button type="button" class="btn btn-success .btn-lg cx-compnent cx-col-auto col-auto"
+                <button type="button" class="btn btn-success cx-compnent cx-col-auto col-auto"
                         onclick="SelectAllClicked();">复制格式化的内容
                 </button>
             </form>

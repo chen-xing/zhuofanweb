@@ -26,11 +26,12 @@
             </ul>
             <form class="d-flex">
                 <input id="searchKeyWorld" class="form-control me-2" type="search" placeholder="Search"
-                       aria-label="Search" style="width:600px;height:40px;line-height: 40px;" onkeydown="clientClickButton(event)">
+                       aria-label="Search" style="width:600px;height:40px;line-height: 40px;"
+                       onkeydown="clientClickButton(event)">
                 <button class="btn btn-primary" type="button" onclick="search();">Search</button>
             </form>
         </div>
     </div>
-    <a href="#top" class="el-backtop" style="right: 50px; bottom: 70px;"><i class="fa fa-arrow-up fa-lg"
+    <a href="#top" class="el-backtop" style="right: 20px; bottom: 60px;"><i class="fa fa-arrow-up fa"
                                                                             aria-hidden="true"></i></a>
 </nav>
