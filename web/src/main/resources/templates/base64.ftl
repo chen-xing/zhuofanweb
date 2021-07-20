@@ -6,7 +6,8 @@
     </@header>
     <div class="container-fluid">
         <input class="btn btn-primary" id="btnfile" style="display: none;" type="file">
-        <button class="btn btn-primary" onclick="uploadfile();" style="margin:20px;">上传图片</button>
+        <button class="btn btn-primary" onclick="uploadfile();" style="margin:20px 2px">上传图片</button>
+        <button class="btn btn-warning" onclick="base64Analysis();" style="margin:20px 2px">base64转图片</button>
         <hr>
         <img id="showImage" style="max-height: 300px; height: 8em; min-width:8em;margin-left:20px;">
         <hr>
@@ -51,6 +52,19 @@
 
         function uploadfile() {
             $("#btnfile").trigger("click");
+        }
+
+        /**
+         * base64解析为图片
+         */
+        function base64Analysis() {
+            var base64 = $.trim($('textarea').val());
+            if (base64 == null || base64 == undefined || base64 == "") {
+                toastr.error('base64不能为空！');
+                return;
+            }
+            var imgstr = "data:image/jpg;base64," + base64;
+            $("#showImage").attr("src", imgstr);
         }
     </script>
 </@compress>
