@@ -21,6 +21,9 @@
                     <a class="nav-link" href="/figurebed" tabindex="-1" aria-disabled="true">免费图床</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="/search?keyword=人工博客" tabindex="-1" aria-disabled="true">搜索</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="http://md.94rg.com/" tabindex="-1" aria-disabled="true">md美化</a>
                 </li>
             </ul>
