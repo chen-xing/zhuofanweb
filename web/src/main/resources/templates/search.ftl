@@ -7,15 +7,17 @@
     <link rel="stylesheet" href="/static/css/simple-dialog.css">
     <script src="/static/js/simple-dialog.js"></script>
     <style type="text/css">
-        html{
+        html {
             width: 100%;
             margin: 1px auto;
             overflow-x: hidden;
         }
-        body{
+
+        body {
             width: 100%;
             margin: 0 auto;
         }
+
         br {
             height: 0px;
         }
@@ -123,17 +125,18 @@
     <div class="container">
         <div class="header">
             <form action="./search" class="parent">
-                    <input type="keyword" name="keyword" value="${keyword}" style="height:60px;border: solid 1px #0000FF;width:600px;margin-left:220px;">
-                    <input type="submit" value="搜索" style="height: 60px">
+                <input type="keyword" name="keyword" value="${keyword}"
+                       style="height:60px;border: solid 1px #0000FF;width:600px;margin-left:220px;">
+                <input type="submit" value="搜索" style="height: 60px">
             </form>
         </div>
 
         <div class="content" style="margin-top: 25px;">
             <#list articles as article>
                 <div class="c_left">
-                    <p class="con-title" text="${article.title}"/>
-                    <a href="@{${article.path}}" target="_blank" download="${article.path}"><p class="con-path"
-                                                                                               text="${article.path}"/>
+                    <p class="con-title">${article.title}</p>
+                    <a href="${article.path}" target="_blank" download="${article.path}"><p
+                                class="con-path">${article.path}</p>
                     </a>
                     <p class="con-preview">${article.highlightContent}</p>
                     <a class="con-more">完整摘要</a>
