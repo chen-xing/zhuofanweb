@@ -23,7 +23,7 @@ public class GithubService {
         boolean result = GitHubApiUtil.create(url, bytes, systemConfig.getGithubToken());
         if (result) {
             return MessageFormat.format(
-                    "https://cdn.jsdelivr.net/gh/{0}/{1}/{2}",
+                    "https://fastly.jsdelivr.net/gh/{0}/{1}/{2}",
                     systemConfig.getGithubOwner(),
                     systemConfig.getGithubRepo(),
                     systemConfig.getGithuPath() + fileName);
