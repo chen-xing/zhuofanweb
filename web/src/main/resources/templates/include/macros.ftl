@@ -26,6 +26,9 @@
                 s.parentNode.insertBefore(hm, s);
             })();
         </script>
+
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3531608925757879"
+                crossorigin="anonymous"></script>
     </head>
     <body>
 <#--    <canvas id="c" style="position:absolute;top:0px;left:0px;z-index:-1;margin: 0 auto;"></canvas>-->
