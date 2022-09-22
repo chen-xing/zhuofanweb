@@ -1,6 +1,6 @@
 <#include "include/macros.ftl">
 <@compress single_line=false>
-    <@header title="程序员导航网"
+    <@header title="程序员导航网|主人翁个人笔记"
     keywords="程序员之家,程序员首页,程序员门户网站,程序员网址导航,网址导航,程序员门户,coder,coder's home,coderhome,coder home,coders' home"
     description="程序员导航网，便于程序员日常使用的网址集合，你想要的都在这里☺。">
     </@header>
