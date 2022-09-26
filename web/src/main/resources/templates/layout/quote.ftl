@@ -10,3 +10,5 @@
 <link href="../static/css/cx.core.css" rel="stylesheet" type="text/css">
 <link href="https://cdn.staticfile.org/toastr.js/2.1.4/toastr.min.css" rel="stylesheet">
 <script src="https://cdn.staticfile.org/toastr.js/2.1.4/toastr.min.js"></script>
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-3531608925757879"
+        crossorigin="anonymous"></script>
