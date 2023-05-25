@@ -6,7 +6,7 @@
                     <a class="nav-link active" aria-current="page" href="https://beian.miit.gov.cn/">浙ICP备19008730号-3</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="https://www.94rg.com">人工博客</a>
+                    <a class="nav-link" href="https://www.gzcx.net">人工博客</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="/sitemap">sitemap</a>

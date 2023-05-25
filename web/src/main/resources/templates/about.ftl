@@ -17,7 +17,7 @@
                 <p>同时也会分享一些前沿的it技术</p>
                 <p>学习无它但手熟尔，善于利用工具来提高能效</p>
                 <p>如果你有好的建议，欢迎你的来信:chenxin.8910@163.com</p>
-                <p>更多信息敬请关注:<a href="https://www.94rg.com" target="_blank">人工博客</a></p>
+                <p>更多信息敬请关注:<a href="https://www.gzcx.net" target="_blank">人工博客</a></p>
             </div>
         </div>
     </div>
