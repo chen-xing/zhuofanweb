@@ -1,6 +1,10 @@
 package top.chenzhuofan.web.rest;
 
+import cn.hutool.core.lang.TypeReference;
 import com.alibaba.druid.util.StringUtils;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
+import java.lang.reflect.Type;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
@@ -10,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import top.chenzhuofan.web.bean.IndexPageUrlInfoBean;
 import top.chenzhuofan.web.bean.ItNewsBean;
 import top.chenzhuofan.web.service.IndexPageService;
+import top.chenzhuofan.web.util.RedissonCache;
 import top.chenzhuofan.web.util.aop.MethodMonitor;
 
 import java.util.List;
@@ -26,10 +31,25 @@ import java.util.List;
 public class IndexController {
     @Autowired private IndexPageService indexPageService;
 
+    @Autowired private RedissonCache redissonCache;
+
+    // 默认缓存1天
+    private static final Long cacheTime = 60 * 60 * 24L;
+
     @RequestMapping("/")
     @MethodMonitor
     public String home(Model model) {
-        List<IndexPageUrlInfoBean> indexPageUrlInfoBeanList = indexPageService.getIndexPageInfo();
+        Gson gson = new Gson();
+        String cacheKey = "homeData";
+        List<IndexPageUrlInfoBean> indexPageUrlInfoBeanList = null;
+        if (redissonCache.exists(cacheKey)) {
+            String dataStr = redissonCache.get(cacheKey);
+            Type listType = new TypeToken<List<IndexPageUrlInfoBean>>() {}.getType();
+            indexPageUrlInfoBeanList = gson.fromJson(dataStr, listType);
+        } else {
+            indexPageUrlInfoBeanList = indexPageService.getIndexPageInfo();
+            redissonCache.put(cacheKey, gson.toJson(indexPageUrlInfoBeanList), cacheTime);
+        }
         model.addAttribute("pageInfo", indexPageUrlInfoBeanList);
         return "index";
     }

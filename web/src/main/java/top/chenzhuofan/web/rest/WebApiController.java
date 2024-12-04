@@ -18,6 +18,7 @@ import top.chenzhuofan.web.request.GetNewsInfoRequest;
 import top.chenzhuofan.web.response.GetNewsInfoResponse;
 import top.chenzhuofan.web.service.IndexPageService;
 import top.chenzhuofan.web.service.compent.GithubService;
+import top.chenzhuofan.web.util.RedissonCache;
 import top.chenzhuofan.web.util.UUIDUtil;
 import top.chenzhuofan.web.util.YamlUtil;
 import top.chenzhuofan.web.util.aop.MethodMonitor;
